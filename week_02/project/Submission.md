@@ -25,6 +25,8 @@ python agent.py
 
 - **Clear Instructions and Reduced Hallucinations**: All the tasks done by the AI have big and clear prompts for the Agent/Verifier so that it does the intended task perfectly. Hallucinations from `web_search` and `web_fetch` or any other reasons are controlled and reduce by strict instructions. Further hallucinations can be checked and cross-verified from `Verifier`.
 
+- **Response Streaming**: The response given by OpenRouter Agent uses stream to get the typewriter effect of AI and to respond fast and Gemini model also uses a custom built function `typewriter_to_ui` to imitate streaming to give user a better experience and not just make the text appear suddenly. Not using Gemini's streaming as it is glitchy and also the chunks are very large to observe streaming as it is very fast.
+
 - **Verifier**: Automatically responds if the user is asking to verify the `Agent`'s last answer, checks the agents thinking and tools used and cross-verifies the facts to verify `Agent`'s last answer. Requires `GEMINI_API_KEY`.
 
 - **Summary Generation**: Auto summarizes messages after the conversation reaches memory limit to save API tokens and credits and get faster responses. Checks if all messages are already summarized to save time and tokens. Auto summarize saves last response from AI and the tools used for Verifier to work easily. Uses `gemini-2.5-flash` for fast response but fallbacks to user chosen OpenRouter model in case of missing API key or limit reached or high-demand or any other error.
