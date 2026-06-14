@@ -1,0 +1,10 @@
+openai
+python-dotenv
+google-genai
+rank_bm25
+aiohttp
+aiofiles
+httpx
+mcp
+textual
+rich
